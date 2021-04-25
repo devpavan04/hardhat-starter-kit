@@ -5,8 +5,6 @@ const chalk = require("chalk");
 require("@nomiclabs/hardhat-waffle");
 
 const defaultNetwork = "localhost"; // "hardhat" for tests
-const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/");
-
 const INFURA_API_KEY = "ffffffffffffffffffffffffffffffff";
 const TESTNET_ACCOUNT_PRIVATE_KEY = "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff";
 
@@ -55,10 +53,17 @@ module.exports = {
 };
 
 task("accounts", "Prints the list of accounts", async () => {
-  const accounts = await provider.listAccounts();
-  for (let i = 0; i < accounts.length; i++) {
-    const accountBalance = await provider.getBalance(accounts[i]);
-    console.log("📄", chalk.cyan(accounts[i]), "💸", chalk.magenta(utils.formatEther(accountBalance), "ETH"));
+  if (defaultNetwork === "localhost") {
+    const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545/");
+    const accounts = await provider.listAccounts();
+    for (let i = 0; i < accounts.length; i++) {
+      const accountBalance = await provider.getBalance(accounts[i]);
+      console.log("📄", chalk.cyan(accounts[i]), "💸", chalk.magenta(utils.formatEther(accountBalance), "ETH"));
+    }
+    console.log("\n");
+  } else {
+    console.log(
+      " ⚠️  This task only runs on JsonRpcProvider running a node at " + chalk.magenta("localhost:8545") + "\n"
+    );
   }
-  console.log("\n");
 });
