@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "prettier": "prettier --write 'contracts/**/*.sol'",
+    "clean": "hardhat clean",
     "compile": "hardhat compile",
     "chain": "hardhat node",
     "test": "hardhat test",
-    "deploy": "hardhat run scripts/deploy.js && hardhat run scripts/publish.js",
+    "deploy": "hardhat run scripts/deploy.js",
     "publish": "hardhat run scripts/publish.js",
     "accounts": "hardhat accounts"
   },

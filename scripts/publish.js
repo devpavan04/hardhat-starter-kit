@@ -3,7 +3,7 @@ const chalk = require("chalk");
 const hre = require("hardhat");
 
 const publishDir = "./client/src/contracts";
-const graphDir = "./output";
+const graphDir = "./subgraph";
 
 function publishContract(contractName) {
   console.log(" 💽 Publishing", chalk.cyan(contractName), "to", chalk.gray(publishDir));
@@ -63,7 +63,7 @@ function publishContract(contractName) {
     return true;
   } catch (e) {
     if (e.toString().indexOf("no such file or directory") >= 0) {
-      console.log(chalk.yellow("\n\n ⚠️  Can't publish " + contractName + " yet (make sure it getting deployed).\n\n"));
+      console.log(chalk.grey("\n\n ⚠️  Can't publish " + contractName + " yet (make sure it getting deployed).\n\n"));
     } else {
       console.log(e);
       return false;
