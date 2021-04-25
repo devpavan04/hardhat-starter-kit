@@ -24,32 +24,34 @@ cd ..
 ```
 npm run compile
 ```
+* specify the contract/s being deployed in the main() function of   scripts/deploy.js file
 * Deployments and tests :
   * Hardhat Network
-    * Test - without running a chain
+    * Deploy - no need to deploy
+    * Test
       * change defaultNetwork to "hardhat" in hardhat.config.js file
       ```
       npm run test
       ```
   * Localhost
-    * Test - with running a chain at localhost:8545
+    * Deploy
       * change defaultNetwork to "localhost" in hardhat.config.js file
         * run a local JsonRpcProvider (chain) at localhost:8545
         ```
         npm run chain
         ```
-        * specify the contract/s being deployed in the main() function of   scripts/deploy.js file
+        * open new terminal
         * deploy contract
         ```
         npm run deploy
         ```
-        * test your contracts
-        ```
-        npm run test
-        ```
+    * Test
+      ```
+      npm run test
+      ```
   * Testnet
-    * Deploy to test network
-      * change defaultNetwork to required testnet, ex: "kovan",   "ropsten" in hardhat.config.js file
+    * Deploy
+      * change defaultNetwork to required testnet in hardhat.config.js file, ex: "kovan", "ropsten"
       * change INFURA_API_KEY to your infura api key
       * change TESTNET_ACCOUNT_PRIVATE_KEY to your testnet's account's  private key
       * deploy contract
@@ -57,9 +59,10 @@ npm run compile
       npm run deploy
       ```
 * Publish artifacts to the frontend
-```
-npm run publish
-```
+  ```
+  npm run publish
+  ```
+  * access artifacts from ./subgraph folder and ./client/src/contracts folder
 * Start react app
 ```
 cd client
