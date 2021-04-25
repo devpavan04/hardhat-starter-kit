@@ -63,7 +63,7 @@ function publishContract(contractName) {
     return true;
   } catch (e) {
     if (e.toString().indexOf("no such file or directory") >= 0) {
-      console.log(chalk.grey("\n\n ⚠️  Can't publish " + contractName + " yet (make sure it getting deployed).\n\n"));
+      console.log(chalk.grey(" ⚠️  Can't publish " + contractName + " yet (make sure it getting deployed).\n\n"));
     } else {
       console.log(e);
       return false;
