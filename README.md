@@ -15,36 +15,36 @@ npm install
 ```
 Hardhat flow :
 * cd back into root folder
-```
-cd ..
-```
+  ```
+  cd ..
+  ```
 * Write contracts inside contracts folder
 * Write tests inside test folder
 * Compile
-```
-npm run compile
-```
+  ```
+  npm run compile
+  ```
 * specify the contract/s being deployed in the main() function of   scripts/deploy.js file
 * Deployments and tests :
   * Hardhat Network
     * Deploy - no need to deploy
     * Test
       * change defaultNetwork to "hardhat" in hardhat.config.js file
-      ```
-      npm run test
-      ```
+        ```
+        npm run test
+        ```
   * Localhost
     * Deploy
       * change defaultNetwork to "localhost" in hardhat.config.js file
         * run a local JsonRpcProvider (chain) at localhost:8545
-        ```
-        npm run chain
-        ```
+          ```
+          npm run chain
+          ```
         * open new terminal
         * deploy contract
-        ```
-        npm run deploy
-        ```
+          ```
+          npm run deploy
+          ```
     * Test
       ```
       npm run test
@@ -55,16 +55,16 @@ npm run compile
       * change INFURA_API_KEY to your infura api key
       * change TESTNET_ACCOUNT_PRIVATE_KEY to your testnet's account's  private key
       * deploy contract
-      ```
-      npm run deploy
-      ```
+        ```
+        npm run deploy
+        ```
 * Publish artifacts to the frontend
   ```
   npm run publish
   ```
   * access artifacts from ./subgraph folder and ./client/src/contracts folder
 * Start react app
-```
-cd client
-npm start
-```
+  ```
+  cd client
+  npm start
+  ```
