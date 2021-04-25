@@ -52,14 +52,14 @@ npm run compile
       * change defaultNetwork to required testnet, ex: "kovan",   "ropsten" in hardhat.config.js file
       * change INFURA_API_KEY to your infura api key
       * change TESTNET_ACCOUNT_PRIVATE_KEY to your testnet's account's  private key
-        * deploy contract
-        ```
-        npm run deploy
-        ```
-  * Publish artifacts to the frontend
+      * deploy contract
       ```
-      npm run publish
+      npm run deploy
       ```
+* Publish artifacts to the frontend
+```
+npm run publish
+```
 * Start react app
 ```
 cd client
