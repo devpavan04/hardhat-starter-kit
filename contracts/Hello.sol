@@ -25,8 +25,6 @@ contract Hello {
     receive() external payable {}
 
     function deposit() public payable {
-        // require(msg.sender == 0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC, "No other accounts!");
-
         (bool sent, bytes memory data) =
             address(this).call{value: msg.value}("");
         require(sent, "Failed to send Ether");

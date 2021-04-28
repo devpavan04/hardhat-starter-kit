@@ -3,7 +3,6 @@ const { use, expect } = require("chai");
 const { solidity } = require("ethereum-waffle");
 
 use(solidity);
-use(require("chai-as-promised")).should();
 
 describe("Hello", () => {
   let hello, acc1, acc2, acc3;
@@ -40,8 +39,6 @@ describe("Hello", () => {
       await hello.connect(acc3).deposit({ value: ethers.utils.parseEther("5") });
 
       expect(await hello.contractBalance()).to.equal("5000000000000000000");
-
-      // await hello.connect(acc2).deposit({ value: ethers.utils.parseEther("5") }).should.be.rejected;
     });
   });
 });
